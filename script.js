@@ -1,5 +1,6 @@
 const themeButton = document.getElementById("themeButton"); //theme button
 const button = document.getElementById("helloButton"); //click me button
+const resetCounterButton = document.getElementById("resetCounterButton"); //reset counter button
 const clickCountText = document.getElementById("clickCount"); //click counter text
 let clicked = false; //click me default
 let clickCount = Number(localStorage.getItem("clickCount")) || 0;
@@ -21,6 +22,12 @@ button.addEventListener("click", function () {
     button.textContent = "Click me";
     clicked = false;
   }
+});
+
+resetCounterButton.addEventListener("click", function () {
+  clickCount = 0;
+  clickCountText.textContent = "Click count: " + clickCount;
+  localStorage.setItem("clickCount", clickCount);
 });
 // Theme button
 themeButton.addEventListener("click", function () {
