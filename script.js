@@ -1,6 +1,10 @@
-const themeButton = document.getElementById("themeButton");
-const button = document.getElementById("helloButton");
-let clicked = false;
+const themeButton = document.getElementById("themeButton"); //theme button
+const button = document.getElementById("helloButton"); //click me button
+let clicked = false; //click me default
+// theme button
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+  }
 
 button.addEventListener("click", function () {
   if (!clicked) {
@@ -11,6 +15,13 @@ button.addEventListener("click", function () {
     clicked = false;
   }
 });
+// Theme button
 themeButton.addEventListener("click", function () {
     document.body.classList.toggle("dark-mode");
+  
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
   });
