@@ -20,5 +20,13 @@
   <h2>About this page</h2>
   <p>This is my first simple webpage hosted from GitHub.</p>
   <p>It is now published with GitHub Pages.</p>
+  <button id="helloButton">Click me</button>
+  <script>
+    const button = document.getElementById("helloButton");
+  
+    button.addEventListener("click", function () {
+      button.textContent = "You clicked me!";
+    });
+  </script>
 </body>
 </html>
